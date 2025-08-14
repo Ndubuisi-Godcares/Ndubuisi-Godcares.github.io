@@ -1120,26 +1120,26 @@
         charIndex++;
       }
 
-      let typeSpeed = 200;
+      let typeSpeed = 1000;
 
       if (isDeleting) {
-        typeSpeed /= 1.5;
+        typeSpeed /= 1200;
       }
 
       if (!isDeleting && charIndex === currentMessage.length) {
-        typeSpeed = 2500;
+        typeSpeed = 3000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         messageIndex = (messageIndex + 1) % messages.length;
-        typeSpeed = 1000;
+        typeSpeed = 2000;
       }
 
       setTimeout(typeWriter, typeSpeed);
     }
 
     // Start typing animation
-    setTimeout(typeWriter, 1000);
+    setTimeout(typeWriter, 1500);
 
     // Floating particles in hero section
     function createFloatingParticles() {
