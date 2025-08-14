@@ -3,89 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Godcares Ndubuisi — Portfolio</title>
-  <meta name="description" content="Portfolio of Godcares Ndubuisi — AI/ML Engineer & Junior Data Scientist. Projects, experience, publications, and contact."/>
+  <title>Godcares Ndubuisi — AI/ML Portfolio</title>
+  <meta name="description" content="Portfolio of Godcares Ndubuisi — AI/ML Engineer & Data Scientist. Showcasing expertise in artificial intelligence, machine learning, and real-world AI applications."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    body {
-      background-color: #111;
-      color: #eee;
-    }
-
-    /* --- Neon Glow --- */
-    .neon-text {
-      color: #fff;
-      text-shadow:
-        0 0 3px #fff,
-        0 0 5px #fff,
-        0 0 10px #00e5ff,
-        0 0 20px #00e5ff,
-        0 0 30px #00e5ff;
-    }
-    h1.neon-text {
-      font-size: 4rem;
-      text-align: center;
-    }
-    h2 {
-      color: #fff;
-      text-shadow:
-        0 0 2px #fff,
-        0 0 4px #00e5ff,
-        0 0 8px #00e5ff;
-    }
-
-    /* --- Hero Background --- */
-    #hero-canvas {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-    }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-    .hero-grid {
-      background-color: rgba(17, 17, 17, 0.7);
-      backdrop-filter: blur(5px);
-      padding: 2rem;
-      border-radius: 15px;
-    }
-
-    /* --- Animations --- */
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-    .card {
-      transition: all 0.3s ease-in-out;
-      animation: float 6s ease-in-out infinite;
-    }
-    .card:hover {
-      transform: translateY(-15px) scale(1.03);
-      box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
-    }
-    .section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
 </head>
 <body>
   <header class="header">
     <div class="container nav">
-      <div class="brand"><a href="#hero">GN</a></div>
+      <div class="brand">
+        <a href="#hero">GN</a>
+      </div>
       <nav class="menu" id="menu">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -96,7 +28,7 @@
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="menu-toggle" id="menuToggle">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
@@ -108,8 +40,8 @@
         <img src="assets/profile.jpg" alt="Profile photo" class="avatar" />
         <div>
           <h1 class="neon-text">GODCARES NDUBUISI</h1>
-          <p class="subtitle">AI/ML Engineer • Junior Data Scientist</p>
-          <p class="location">Pune, Maharashtra, India</p>
+          <p class="subtitle">AI/ML Engineer • Data Scientist</p>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p>
           <div class="actions">
             <a class="btn primary" href="assets/resume.pdf" download>⬇ Download Resume</a>
             <a class="btn ghost" href="mailto:ndubuisigodcares1011@gmail.com">✉ Email</a>
@@ -121,144 +53,104 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about" class="section bg-ai">
       <div class="container">
         <h2>About Me</h2>
         <p>
-          I’m an AI/ML engineer focused on building real-world, production-grade systems:
-          from web-scale data pipelines and computer vision to LLM assistants and RAG.
+          I design and deliver AI-powered systems that solve real-world problems. From <b>LLM-powered assistants</b> and <b>computer vision pipelines</b> to <b>financial market modeling</b> and <b>data-driven decision platforms</b>, my work blends technical depth with business impact. I thrive on transforming complex data into actionable insights and scalable products.
         </p>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section">
+    <section id="experience" class="section bg-grid">
       <div class="container">
-        <h2>Work Experience</h2>
-        <!-- Your experience from resume -->
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Projects & Research</h2>
-        <!-- Your projects -->
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div>
-            <h3>Programming</h3>
-            <div class="badges"><span>Python</span><span>SQL</span><span>Java</span></div>
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="item">
+            <h3>Junior Data Scientist (Intern) — Guruji AIR International</h3>
+            <span class="meta">Jan 2025 – Jun 2025 • Pune, India</span>
+            <ul>
+              <li>Engineered scalable <b>web scraping pipelines</b> (BeautifulSoup, Scrapy) for handwritten manuscript datasets.</li>
+              <li>Developed <b>multilingual plant species identification</b> system with real-time detection using EfficientNet + WebRTC.</li>
+              <li>Built <b>AI-powered PDF Q&A assistant</b> with Cohere LLM, FAISS, Streamlit & Gemini API integration.</li>
+              <li>Researched <b>Agentic AI</b> and <b>AI governance</b> with technical documentation for enterprise adoption.</li>
+            </ul>
           </div>
-          <div>
-            <h3>Frameworks & Tools</h3>
-            <div class="badges"><span>Pandas</span><span>NumPy</span><span>TensorFlow</span> ...</div>
+          <div class="item">
+            <h3>Project Intern — C-DAC</h3>
+            <span class="meta">Jul 2024 – Dec 2024 • Remote</span>
+            <ul>
+              <li>Developed <b>real-time ransomware detection</b> using Random Forest, SVM & Neural Networks.</li>
+              <li>Devised mitigation strategies to minimize disruption during malware classification.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="section bg-particles">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards">
+          <div class="card"><h3>GenAI Predictive Maintenance</h3><p>WCGAN-based predictive maintenance achieving 85% failure detection accuracy.</p></div>
+          <div class="card"><h3>Hybrid Deep Learning IDS</h3><p>95%+ anomaly detection accuracy with combined CNN-LSTM architectures.</p></div>
+          <div class="card"><h3>ReinforceTrader</h3><p>RL-based stock trading bot outperforming SPY by 80.81% over 3 years.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section bg-circuit">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="cards">
+          <div class="card"><i class="fas fa-brain"></i><h3>AI/ML</h3><p>Deep Learning, LLMs, RAG, GANs, NLP</p></div>
+          <div class="card"><i class="fas fa-code"></i><h3>Tech Stack</h3><p>Python, TensorFlow, PyTorch, Streamlit</p></div>
+          <div class="card"><i class="fas fa-database"></i><h3>Data</h3><p>SQL, Big Data, Web Scraping</p></div>
+        </div>
+      </div>
+    </section>
+
     <!-- EDUCATION -->
-    <section id="education" class="section">
+    <section id="education" class="section bg-ai">
       <div class="container">
         <h2>Education</h2>
-        <p>B.Tech, AI & ML — Symbiosis Institute of Technology, Pune (2021–2025)</p>
+        <div class="cards">
+          <div class="card"><i class="fas fa-university"></i><h3>B.Tech AI & ML</h3><p>Specialized in Deep Learning and Data Science.</p></div>
+        </div>
       </div>
     </section>
 
     <!-- AWARDS -->
-    <section id="awards" class="section">
+    <section id="awards" class="section bg-grid">
       <div class="container">
         <h2>Awards</h2>
-        <ul><li>International Student Merit Scholarship, SIT (Mar 2024)</li></ul>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section">
-      <div class="container">
-        <h2>Publications</h2>
-        <ul>
-          <li><a href="https://ieeexplore.ieee.org/document/10461815" target="_blank">IEEE Xplore — Customer Segmentation</a></li>
-          <li><a href="https://www.routledge.com/Digital-Defence-Harnessing-the-Power-of-Artificial-Intelligence-for-Cybersecurity-and-Digital-Forensics/Kumar-KumarChaudhary-Shastri-Singh-Kulkarni/p/book/9781032714813" target="_blank">CRC Press — Intrusion Detection</a></li>
-        </ul>
+        <div class="cards">
+          <div class="card"><i class="fas fa-trophy"></i><h3>K-Startup Grand Challenge</h3><p>Selected for Stage 1 out of global pool.</p></div>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact" class="section bg-particles">
       <div class="container">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:ndubuisigodcares1011@gmail.com">ndubuisigodcares1011@gmail.com</a></p>
-        <p>Phone: <a href="tel:+918767018831">+91 87670 18831</a></p>
+        <p>Email: ndubuisigodcares1011@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/godcares-ndubuisi-79928120a/">Profile</a></p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> Godcares Ndubuisi • Built with ❤️ and GitHub Pages</p>
+      <p>© <span id="year"></span> Godcares Ndubuisi • Built with ❤️</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('menuToggle').addEventListener('click', () => {
-      document.getElementById('menu').classList.toggle('open');
-    });
-
-    // 3D particles with neon cyan
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCnt = 5000;
-    const posArray = new Float32Array(particlesCnt * 3);
-    for(let i = 0; i < particlesCnt * 3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 5;
-    }
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    const particlesMaterial = new THREE.PointsMaterial({ size: 0.005, color: 0x00e5ff });
-    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particlesMesh);
-    camera.position.z = 2;
-
-    document.addEventListener('mousemove', (e) => {
-      particlesMesh.rotation.y = e.clientX * 0.0001;
-      particlesMesh.rotation.x = e.clientY * 0.0001;
-    });
-
-    function animate() {
-      requestAnimationFrame(animate);
-      particlesMesh.rotation.y += 0.0002;
-      renderer.render(scene, camera);
-    }
-    animate();
-    window.addEventListener('resize', () => {
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-    });
-
-    // Tilt & Scroll animation
-    VanillaTilt.init(document.querySelectorAll(".card"), { max: 15, speed: 400, glare: true, "max-glare": 0.5 });
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.section').forEach(section => observer.observe(section));
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
