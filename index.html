@@ -9,6 +9,98 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Add a dark theme for the neon to pop */
+    body {
+      background-color: #111;
+      color: #eee;
+    }
+
+    /* --- 1. NEON GLOW EFFECT --- */
+    .neon-text {
+      color: #fff;
+      text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+    }
+
+    h1.neon-text {
+      font-size: 4rem; /* Make the name stand out more */
+      text-align: center;
+    }
+
+    h2 {
+      color: #fff;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #0fa,
+        0 0 20px #0fa;
+    }
+
+    /* --- 2. 3D INTERACTIVE DISPLAY --- */
+    /* Canvas for three.js background */
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Place it behind the content */
+    }
+
+    .hero {
+      position: relative; /* Needed for the canvas z-index */
+      overflow: hidden; /* Hide anything that spills out */
+      z-index: 1;
+    }
+    
+    .hero-grid {
+       background-color: rgba(17, 17, 17, 0.7); /* Semi-transparent background for hero content */
+       backdrop-filter: blur(5px);
+       padding: 2rem;
+       border-radius: 15px;
+    }
+
+    /* --- 3. FASCINATION & ANIMATION --- */
+    /* Floating animation for project cards */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .card {
+      transition: all 0.3s ease-in-out;
+      /* Apply floating animation */
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Make the card pop a bit more on hover */
+    .card:hover {
+        transform: translateY(-15px) scale(1.03); /* Lift up and scale */
+        box-shadow: 0 0 30px rgba(0, 255, 170, 0.5);
+    }
+    
+    /* Scroll fade-in animation */
+    .section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+  </style>
 </head>
 <body>
   <header class="header">
@@ -31,12 +123,12 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section id="hero" class="section hero">
+      <canvas id="hero-canvas"></canvas>
       <div class="container hero-grid">
         <img src="assets/profile.jpg" alt="Profile photo" class="avatar" />
         <div>
-          <h1>GODCARES NDUBUISI</h1>
+          <h1 class="neon-text">GODCARES NDUBUISI</h1>
           <p class="subtitle">AI/ML Engineer • Junior Data Scientist</p>
           <p class="location">Pune, Maharashtra, India</p>
           <div class="actions">
@@ -49,7 +141,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section">
       <div class="container">
         <h2>About Me</h2>
@@ -62,9 +153,8 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience" class="section">
-      <div class="container">
+        <div class="container">
         <h2>Work Experience</h2>
         <div class="timeline">
           <div class="item">
@@ -93,30 +183,29 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container">
         <h2>Projects & Research</h2>
         <div class="cards">
-          <article class="card">
+          <article class="card" data-tilt>
             <h3>Smart Manufacturing: GenAI Predictive Maintenance</h3>
             <p>Predictive maintenance with Wasserstein Conditional GANs and big-data analytics; achieved 85% accuracy for real-time equipment failure detection and reduced downtime.</p>
             <div class="tags"><span>WCGAN</span><span>Big Data</span><span>Predictive Maintenance</span></div>
           </article>
 
-          <article class="card">
+          <article class="card" data-tilt>
             <h3>Fusion of Deep Architectures for Intrusion Detection</h3>
             <p>Hybrid deep learning intrusion detection system achieving 95%+ anomaly-detection accuracy to strengthen network security.</p>
             <div class="tags"><span>Deep Learning</span><span>Security</span><span>IDS</span></div>
           </article>
 
-          <article class="card">
+          <article class="card" data-tilt>
             <h3>ReinforceTrader: RL-Based Stock Trading</h3>
             <p>SARSA-based trading bot with sentiment analysis, outperforming SPY with 80.81% return over 3 years; integrated blockchain for asset tracking.</p>
             <div class="tags"><span>Reinforcement Learning</span><span>Finance</span><span>NLP</span></div>
           </article>
 
-          <article class="card">
+          <article class="card" data-tilt>
             <h3>Customer Segmentation for Market Analysis</h3>
             <p>Applied unsupervised clustering to segment customers and optimize marketing strategies, improving target efficiency.</p>
             <div class="tags"><span>Clustering</span><span>EDA</span><span>Segmentation</span></div>
@@ -124,112 +213,44 @@
         </div>
       </div>
     </section>
-
-    <!-- SKILLS -->
+    
     <section id="skills" class="section">
       <div class="container">
         <h2>Skills</h2>
         <div class="skills-grid">
-          <div>
-            <h3>Programming</h3>
-            <div class="badges">
-              <span>Python</span><span>SQL</span><span>Java</span>
             </div>
-          </div>
-          <div>
-            <h3>Frameworks & Tools</h3>
-            <div class="badges">
-              <span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>PyTorch</span><span>Streamlit</span><span>Jupyter</span><span>LangChain</span><span>Gemini</span><span>Cohere API</span>
-            </div>
-          </div>
-          <div>
-            <h3>Data Engineering</h3>
-            <div class="badges">
-              <span>Preprocessing</span><span>Feature Engineering</span><span>Data Pipelines</span><span>Wrangling</span><span>Dashboards</span><span>EDA</span><span>Power BI</span><span>MongoDB</span>
-            </div>
-          </div>
-          <div>
-            <h3>Machine Learning</h3>
-            <div class="badges">
-              <span>Classical ML</span><span>Time Series</span><span>Computer Vision</span><span>EfficientNet</span><span>LSTM</span><span>BERT</span><span>Transfer Learning</span><span>Transformers</span><span>Reinforcement Learning</span>
-            </div>
-          </div>
-          <div>
-            <h3>LLMs & Retrieval</h3>
-            <div class="badges">
-              <span>Prod LLM Agents</span><span>Prompt Eng</span><span>Multimodal</span><span>RAG</span><span>FAISS</span><span>Vector Search</span><span>Semantic Search</span><span>RAG Eval</span><span>Cohere</span>
-            </div>
-          </div>
-          <div>
-            <h3>MLOps & Cloud</h3>
-            <div class="badges">
-              <span>DVC</span><span>MLflow</span><span>Azure</span><span>GCP</span><span>Firebase</span><span>Docker</span><span>Git</span><span>GitHub</span>
-            </div>
-          </div>
-          <div>
-            <h3>Soft Skills</h3>
-            <div class="badges">
-              <span>Technical Communication</span><span>Teamwork</span><span>Problem Solving</span><span>Critical Thinking</span><span>Time Management</span><span>Documentation</span><span>Leadership</span><span>Creativity</span><span>Analytics</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="container">
         <h2>Education</h2>
         <div class="edu">
-          <h3>B.Tech, Artificial Intelligence and Machine Learning</h3>
-          <p>Symbiosis Institute of Technology, Pune, India • Jul 2021 – May 2025</p>
-        </div>
+            </div>
       </div>
     </section>
 
-    <!-- AWARDS -->
     <section id="awards" class="section">
       <div class="container">
         <h2>Awards</h2>
         <ul class="awards">
-          <li><strong>International Student Merit Scholarship</strong>, Symbiosis Institute of Technology — Mar 2024</li>
-        </ul>
+            </ul>
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
     <section id="publications" class="section">
       <div class="container">
         <h2>Publications</h2>
         <ul class="pubs">
-          <li>
-            <a href="https://ieeexplore.ieee.org/document/10461815" target="_blank" rel="noopener">
-              Exploring Customer Segmentation in the Context of Market Analysis — IEEE Xplore (Mar 2024)
-            </a>
-          </li>
-          <li>
-            <a href="https://www.routledge.com/Digital-Defence-Harnessing-the-Power-of-Artificial-Intelligence-for-Cybersecurity-and-Digital-Forensics/Kumar-KumarChaudhary-Shastri-Singh-Kulkarni/p/book/9781032714813" target="_blank" rel="noopener">
-              Fusion of Deep Architectures in Intent-Driven Networks for Intrusion Detection — CRC Press (Apr 2025)
-            </a>
-          </li>
-        </ul>
+            </ul>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
         <div class="contact-grid">
-          <div>
-            <p><strong>Phone:</strong> <a href="tel:+918767018831">+91 87670 18831</a></p>
-            <p><strong>Email:</strong> <a href="mailto:ndubuisigodcares1011@gmail.com">ndubuisigodcares1011@gmail.com</a></p>
-          </div>
-          <div>
-            <p><strong>LinkedIn:</strong> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/godcares-ndubuisi-79928120a/">Profile</a></p>
-            <p><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/Ndubuisi-Godcares">Ndubuisi-Godcares</a></p>
-          </div>
-        </div>
+            </div>
       </div>
     </section>
   </main>
@@ -240,7 +261,11 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+
   <script>
+    // --- ORIGINAL SCRIPT ---
     // Mobile menu toggle
     const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('menu');
@@ -249,6 +274,76 @@
     });
     // Dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // --- NEW SCRIPT FOR EFFECTS ---
+
+    // 1. 3D Interactive Background (three.js)
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({
+        canvas: document.getElementById('hero-canvas'),
+        alpha: true // Make canvas transparent
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const particlesGeometry = new THREE.BufferGeometry;
+    const particlesCnt = 5000;
+    const posArray = new Float32Array(particlesCnt * 3);
+
+    for(let i = 0; i < particlesCnt * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 5;
+    }
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+    const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.005,
+        color: 0x00ffa_a // Neon green color
+    });
+    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particlesMesh);
+    
+    camera.position.z = 2;
+
+    // Mouse movement interaction
+    document.addEventListener('mousemove', (event) => {
+        particlesMesh.rotation.y = event.clientX * 0.0001;
+        particlesMesh.rotation.x = event.clientY * 0.0001;
+    });
+
+    const animate = () => {
+        requestAnimationFrame(animate);
+        particlesMesh.rotation.y += 0.0002;
+        renderer.render(scene, camera);
+    };
+    animate();
+
+    window.addEventListener('resize', () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    });
+
+    // 2. Card Tilt Effect (vanilla-tilt.js)
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.5,
+    });
+    
+    // 3. Scroll Fade-in Effect
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(section => {
+        observer.observe(section);
+    });
+
   </script>
 </body>
 </html>
