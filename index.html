@@ -208,7 +208,10 @@
       font-family: 'JetBrains Mono', monospace;
       color: var(--accent-primary);
       border-right: 2px solid var(--accent-primary);
-      animation: typing 3s steps(30) infinite, blink 1s infinite;
+      animation: blink 1s infinite; /* Change to this */
+      /* Add these two lines to make it look right */
+      display: inline-block; 
+      padding-right: 4px;
     }
 
     @keyframes typing {
@@ -655,7 +658,7 @@
         <h1>GODCARES NDUBUISI</h1>
         <p class="subtitle">AI/ML Engineer • Junior Data Scientist</p>
         <p class="location">Pune, Maharashtra, India</p>
-        <div class="typing-text">Building the future with AI...</div>
+        <p class="subtitle typing-text">Building the future with AI...</p>
         <div class="actions">
           <a class="btn primary" href="assets/resume.pdf" download>⬇ Download Resume</a>
           <a class="btn ghost" href="mailto:ndubuisigodcares1011@gmail.com">✉ Email</a>
@@ -1096,50 +1099,6 @@
         menu.classList.remove('open');
       });
     });
-
-    // Typing animation
-    const typingText = document.querySelector('.typing-text');
-    const messages = [
-      'Building the future with AI...',
-      'Crafting intelligent solutions...',
-      'Transforming data into insights...',
-      'Creating next-gen ML systems...'
-    ];
-    let messageIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typeWriter() {
-      const currentMessage = messages[messageIndex];
-      
-      if (isDeleting) {
-        typingText.textContent = currentMessage.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        typingText.textContent = currentMessage.substring(0, charIndex + 1);
-        charIndex++;
-      }
-
-      let typeSpeed = 1000;
-
-      if (isDeleting) {
-        typeSpeed /= 1200;
-      }
-
-      if (!isDeleting && charIndex === currentMessage.length) {
-        typeSpeed = 3000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        messageIndex = (messageIndex + 1) % messages.length;
-        typeSpeed = 2000;
-      }
-
-      setTimeout(typeWriter, typeSpeed);
-    }
-
-    // Start typing animation
-    setTimeout(typeWriter, 1500);
 
     // Floating particles in hero section
     function createFloatingParticles() {
