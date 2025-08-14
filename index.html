@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Godcares Ndubuisi — Portfolio</title>
+  <meta name="description" content="Portfolio of Godcares Ndubuisi — AI/ML Engineer & Junior Data Scientist. Projects, experience, publications, and contact."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="#hero">GN</a>
+      </div>
+      <nav class="menu" id="menu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <img src="assets/profile.jpg" alt="Profile photo" class="avatar" />
+        <div>
+          <h1>GODCARES NDUBUISI</h1>
+          <p class="subtitle">AI/ML Engineer • Junior Data Scientist</p>
+          <p class="location">Pune, Maharashtra, India</p>
+          <div class="actions">
+            <a class="btn primary" href="assets/resume.pdf" download>⬇ Download Resume</a>
+            <a class="btn ghost" href="mailto:ndubuisigodcares1011@gmail.com">✉ Email</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/godcares-ndubuisi-79928120a/" target="_blank" rel="noopener">in LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/Ndubuisi-Godcares" target="_blank" rel="noopener"> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I’m an AI/ML engineer focused on building real-world, production-grade systems: from
+          web‑scale data pipelines and computer vision to LLM assistants and RAG. I enjoy turning
+          complex problems into practical, elegant solutions and documenting the journey so teams
+          can move faster.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+          <div class="item">
+            <div class="item-header">
+              <h3>Junior Data Scientist (Intern) — Guruji AIR International</h3>
+              <span class="meta">Pune, India • Jan 2025 – Jun 2025</span>
+            </div>
+            <ul>
+              <li>Built scalable web scraping pipelines (BeautifulSoup, Scrapy) to extract handwritten manuscripts, improving dataset quality for ML tasks.</li>
+              <li>Developed a multilingual plant species identification system (TensorFlow, EfficientNet) with live camera detection (WebRTC).</li>
+              <li>Created an AI assistant using Cohere LLM, FAISS, and Streamlit for PDF Q&A with voice/text input, enhanced via Gemini API integration.</li>
+              <li>Researched Agentic AI and AI governance, producing technical documentation for internal knowledge sharing.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <div class="item-header">
+              <h3>Project Intern — Centre for Development of Advanced Computing (C-DAC)</h3>
+              <span class="meta">Pune, India (Remote) • Jul 2024 – Dec 2024</span>
+            </div>
+            <ul>
+              <li>Built a real-time ransomware detection system using supervised ML algorithms (Random Forest, SVM, Neural Networks).</li>
+              <li>Collaborated on detection strategies to minimize system disruption during classification.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects & Research</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Smart Manufacturing: GenAI Predictive Maintenance</h3>
+            <p>Predictive maintenance with Wasserstein Conditional GANs and big-data analytics; achieved 85% accuracy for real-time equipment failure detection and reduced downtime.</p>
+            <div class="tags"><span>WCGAN</span><span>Big Data</span><span>Predictive Maintenance</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Fusion of Deep Architectures for Intrusion Detection</h3>
+            <p>Hybrid deep learning intrusion detection system achieving 95%+ anomaly-detection accuracy to strengthen network security.</p>
+            <div class="tags"><span>Deep Learning</span><span>Security</span><span>IDS</span></div>
+          </article>
+
+          <article class="card">
+            <h3>ReinforceTrader: RL-Based Stock Trading</h3>
+            <p>SARSA-based trading bot with sentiment analysis, outperforming SPY with 80.81% return over 3 years; integrated blockchain for asset tracking.</p>
+            <div class="tags"><span>Reinforcement Learning</span><span>Finance</span><span>NLP</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Customer Segmentation for Market Analysis</h3>
+            <p>Applied unsupervised clustering to segment customers and optimize marketing strategies, improving target efficiency.</p>
+            <div class="tags"><span>Clustering</span><span>EDA</span><span>Segmentation</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div>
+            <h3>Programming</h3>
+            <div class="badges">
+              <span>Python</span><span>SQL</span><span>Java</span>
+            </div>
+          </div>
+          <div>
+            <h3>Frameworks & Tools</h3>
+            <div class="badges">
+              <span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>PyTorch</span><span>Streamlit</span><span>Jupyter</span><span>LangChain</span><span>Gemini</span><span>Cohere API</span>
+            </div>
+          </div>
+          <div>
+            <h3>Data Engineering</h3>
+            <div class="badges">
+              <span>Preprocessing</span><span>Feature Engineering</span><span>Data Pipelines</span><span>Wrangling</span><span>Dashboards</span><span>EDA</span><span>Power BI</span><span>MongoDB</span>
+            </div>
+          </div>
+          <div>
+            <h3>Machine Learning</h3>
+            <div class="badges">
+              <span>Classical ML</span><span>Time Series</span><span>Computer Vision</span><span>EfficientNet</span><span>LSTM</span><span>BERT</span><span>Transfer Learning</span><span>Transformers</span><span>Reinforcement Learning</span>
+            </div>
+          </div>
+          <div>
+            <h3>LLMs & Retrieval</h3>
+            <div class="badges">
+              <span>Prod LLM Agents</span><span>Prompt Eng</span><span>Multimodal</span><span>RAG</span><span>FAISS</span><span>Vector Search</span><span>Semantic Search</span><span>RAG Eval</span><span>Cohere</span>
+            </div>
+          </div>
+          <div>
+            <h3>MLOps & Cloud</h3>
+            <div class="badges">
+              <span>DVC</span><span>MLflow</span><span>Azure</span><span>GCP</span><span>Firebase</span><span>Docker</span><span>Git</span><span>GitHub</span>
+            </div>
+          </div>
+          <div>
+            <h3>Soft Skills</h3>
+            <div class="badges">
+              <span>Technical Communication</span><span>Teamwork</span><span>Problem Solving</span><span>Critical Thinking</span><span>Time Management</span><span>Documentation</span><span>Leadership</span><span>Creativity</span><span>Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2>Education</h2>
+        <div class="edu">
+          <h3>B.Tech, Artificial Intelligence and Machine Learning</h3>
+          <p>Symbiosis Institute of Technology, Pune, India • Jul 2021 – May 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards" class="section">
+      <div class="container">
+        <h2>Awards</h2>
+        <ul class="awards">
+          <li><strong>International Student Merit Scholarship</strong>, Symbiosis Institute of Technology — Mar 2024</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+      <div class="container">
+        <h2>Publications</h2>
+        <ul class="pubs">
+          <li>
+            <a href="https://ieeexplore.ieee.org/document/10461815" target="_blank" rel="noopener">
+              Exploring Customer Segmentation in the Context of Market Analysis — IEEE Xplore (Mar 2024)
+            </a>
+          </li>
+          <li>
+            <a href="https://www.routledge.com/Digital-Defence-Harnessing-the-Power-of-Artificial-Intelligence-for-Cybersecurity-and-Digital-Forensics/Kumar-KumarChaudhary-Shastri-Singh-Kulkarni/p/book/9781032714813" target="_blank" rel="noopener">
+              Fusion of Deep Architectures in Intent-Driven Networks for Intrusion Detection — CRC Press (Apr 2025)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <div>
+            <p><strong>Phone:</strong> <a href="tel:+918767018831">+91 87670 18831</a></p>
+            <p><strong>Email:</strong> <a href="mailto:ndubuisigodcares1011@gmail.com">ndubuisigodcares1011@gmail.com</a></p>
+          </div>
+          <div>
+            <p><strong>LinkedIn:</strong> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/godcares-ndubuisi-79928120a/">Profile</a></p>
+            <p><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/Ndubuisi-Godcares">Ndubuisi-Godcares</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Godcares Ndubuisi • Built with ❤️ and GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
