@@ -1120,19 +1120,19 @@
         charIndex++;
       }
 
-      let typeSpeed = 100;
+      let typeSpeed = 200;
 
       if (isDeleting) {
-        typeSpeed /= 2;
+        typeSpeed /= 1.5;
       }
 
       if (!isDeleting && charIndex === currentMessage.length) {
-        typeSpeed = 2000;
+        typeSpeed = 2500;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         messageIndex = (messageIndex + 1) % messages.length;
-        typeSpeed = 500;
+        typeSpeed = 1000;
       }
 
       setTimeout(typeWriter, typeSpeed);
